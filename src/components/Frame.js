@@ -1,3 +1,18 @@
+/*
+Purpose:
+This component displays 1 image.
+
+Properties Received:
+We send in the following properties:
+- root filename
+- the frame number
+
+Result:
+We use these properties to ascertain which image to display.
+
+
+*/
+
 import React from 'react';
 
 const Frame = ({ filename, frame }) => {
