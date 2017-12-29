@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Frame from './Frame';
-import Animator from './Animator';
+import FrameAnimator from './FrameAnimator';
 
 class App extends Component {
 
@@ -10,9 +10,9 @@ class App extends Component {
   }
   render() {
       return (
-	      <Animator>
+	      <FrameAnimator>
 	      	<Frame filename="CD38" frame={1}/>,
-	      </Animator>
+	      </FrameAnimator>
       )
   }
 }

@@ -1,7 +1,7 @@
 import React, { Component, cloneElement, Children } from 'react';
 import Frame from './Frame';
 
-class Animator extends React.Component {
+class FrameAnimator extends React.Component {
 	constructor(props) {
 	    super(props);
 
@@ -92,4 +92,4 @@ class Animator extends React.Component {
 	}
 }
 
-export default Animator;
+export default FrameAnimator;
