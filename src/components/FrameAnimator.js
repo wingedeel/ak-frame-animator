@@ -19,10 +19,8 @@ class FrameAnimator extends React.Component {
 	    super(props);
 
 	    this.state = {
-	        current: 10,
-	        total: this.props.total,
-	        fps : this.props.fps,
-	        fileRoot: this.props.fileRoot
+	    	isActive:true,
+	        current: 10
 	    };
 
 	    this.loop = this.loop.bind(this);
@@ -39,12 +37,12 @@ class FrameAnimator extends React.Component {
 
      loop(time) {
         this.setState({ current: this.getNextNum()})
-        window.setTimeout(this.loop, Math.round(1000 / this.state.fps));
+        window.setTimeout(this.loop, Math.round(1000 / this.props.fps));
      }
 
      getNextNum() {
   		let next = this.state.current;
-		if(this.state.current < this.state.total-2) {
+		if(this.state.current < this.props.total-2) {
 			next++;
 		}
 		 else {
@@ -76,7 +74,11 @@ class FrameAnimator extends React.Component {
 		// )
 		// Display the image for the current frame
 		return (
-			<Frame filename={this.state.fileRoot} frame={this.state.current} />
+			<Frame 
+				filename={this.props.fileRoot}  
+				zeroPadding={this.props.zeroPadding}
+				frame={this.state.current}
+			/>
 		)
 	}
 }

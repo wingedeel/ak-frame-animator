@@ -10,7 +10,12 @@ class App extends Component {
   }
   render() {
       return (
-	      <FrameAnimator total={80} fps={24} fileRoot="CD38">
+	      <FrameAnimator 
+          total={80}
+          fps={24} 
+          fileRoot="src/images/CD38" 
+          zeroPadding={3}
+        >
 	      	<Frame/>,
 	      </FrameAnimator>
       )
