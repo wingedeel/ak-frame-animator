@@ -10,8 +10,8 @@ class App extends Component {
   }
   render() {
       return (
-	      <FrameAnimator>
-	      	<Frame filename="CD38" frame={1}/>,
+	      <FrameAnimator total={80} fps={24} fileRoot="CD38">
+	      	<Frame/>,
 	      </FrameAnimator>
       )
   }
