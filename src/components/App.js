@@ -10,11 +10,12 @@ class App extends Component {
   }
   render() {
       return (
-	      <FrameAnimator 
-          total={80}
+	      <FrameAnimator
+          min={1} 
+          max={80}
+          fileRoot="src/assets/img/page4-1-3/CD38/CD38-${i}.jpg" 
+          zeroPadding={5}
           fps={24} 
-          fileRoot="src/images/CD38" 
-          zeroPadding={3}
         >
 	      	<Frame/>,
 	      </FrameAnimator>

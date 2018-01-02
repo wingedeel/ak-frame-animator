@@ -20,7 +20,7 @@ class FrameAnimator extends React.Component {
 
 	    this.state = {
 	    	isActive:true,
-	        current: 10
+	        current: this.props.min
 	    };
 
 	    this.loop = this.loop.bind(this);
@@ -42,11 +42,11 @@ class FrameAnimator extends React.Component {
 
      getNextNum() {
   		let next = this.state.current;
-		if(this.state.current < this.props.total-2) {
+		if(this.state.current < this.props.max) {
 			next++;
 		}
 		 else {
-			next = 10;
+			next = this.props.min;
 		}
 		return next;
 	}
