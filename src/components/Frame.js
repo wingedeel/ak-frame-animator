@@ -40,7 +40,6 @@ const Frame = ({ filename, frame, zeroPadding }) => {
      console.log('imgSrc', imgSrc);
   }
 
-  http://localhost:3000/src/images/CD38-00020.jpg
   return (
     <div>
       <img src={imgSrc} />
