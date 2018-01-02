@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Frame from './Frame';
-import FrameAnimator from './FrameAnimator';
+import AnimationLoop from './AnimationLoop';
 
 class App extends Component {
 
@@ -10,15 +10,15 @@ class App extends Component {
   }
   render() {
       return (
-	      <FrameAnimator
+	      <AnimationLoop
           min={1} 
           max={80}
           fileRoot="src/assets/img/page4-1-3/CD38/CD38-${i}.jpg" 
-          zeroPadding={5}
+          pad={5}
           fps={24} 
         >
 	      	<Frame/>,
-	      </FrameAnimator>
+	      </AnimationLoop>
       )
   }
 }

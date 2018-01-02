@@ -14,7 +14,7 @@ Result:
 import React, { Component, cloneElement, Children } from 'react';
 import Frame from './Frame';
 
-class FrameAnimator extends React.Component {
+class AnimationLoop extends React.Component {
 	constructor(props) {
 	    super(props);
 
@@ -76,11 +76,52 @@ class FrameAnimator extends React.Component {
 		return (
 			<Frame 
 				filename={this.props.fileRoot}  
-				zeroPadding={this.props.zeroPadding}
+				pad={this.props.pad}
 				frame={this.state.current}
 			/>
 		)
 	}
 }
 
-export default FrameAnimator;
+
+/**
+ * Define JSON schema for editing
+ * @type {Object}
+ */
+AnimationLoop.schema = {
+  title: 'AnimationLoop',
+  type: 'object',
+  properties: {
+    min: {
+      type: 'number',
+    },
+    max: {
+      type: 'number',
+    },
+  },
+  required: [],
+};
+
+export default AnimationLoop;
+
+
+//--------------------------------------------
+// import React from 'react';
+
+
+// const InteractiveContainer = props => <div id={props.blockId}>{props.children}</div> || null;
+
+// InteractiveContainer.config = {
+//   interactive: true,
+// };
+
+// InteractiveContainer.schema = {
+//   title: 'Interactive Container',
+//   type: 'object',
+//   properties: {
+
+//   },
+// };
+
+// export default InteractiveContainer;
+

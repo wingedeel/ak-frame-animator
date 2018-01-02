@@ -16,21 +16,42 @@ We use these properties to ascertain which image to display.
 import React from 'react';
 import {padStart} from 'lodash';
 
-const Frame = ({ filename, frame, zeroPadding }) => {
+//const FrameAnimator = ({ min, max, filename, pad, blockId, interactive }) => {
+const Frame = ({ filename, pad, frame, blockId }) => {
   // Base URL
   const base = 'http://localhost:8080/';
 
   // Zero pad
-  const framePadded = zeroPadding ? String(frame).padStart(zeroPadding, '0') : frame;
+  const framePadded = pad ? String(frame).padStart(pad, '0') : frame;
   const imgSrc = base + filename.replace('${i}', framePadded);
 
+ // return (<div className="frame-animator" id={blockId}>
+ //    <img src={imgSrc} className="frame-animator__image" />
+ //  </div>);
   return (
-    <div>
+    <div id={blockId}>
       <img src={imgSrc} />
     </div>
   );
 };
 
-
+/**
+ * Define JSON schema for editing
+ * @type {Object}
+ */
+Frame.schema = {
+  title: 'Frame',
+  type: 'object',
+  properties: {
+    filename: {
+      type: 'string',
+    },
+    pad: {
+      title: 'Zero Padding',
+      type: 'number',
+    },
+  },
+  required: [],
+};
 
 export default Frame;
