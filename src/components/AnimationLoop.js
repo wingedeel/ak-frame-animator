@@ -55,7 +55,7 @@ class AnimationLoop extends React.Component {
 		// const animProps = Object.assign( {}, this.props);
 		// animProps.filename = this.props.filename,
 		// animProps.frame = this.state.current
-		// const childrenWithExtraProp = React.Children.map(this.props.children, child => {
+		//const childrenWithExtraProp = React.Children.map(this.props.children, child => {
 	 //      return React.cloneElement(child, {
 	 //        frame: this.state.current
 	 //      });
