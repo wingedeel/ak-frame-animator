@@ -25,12 +25,9 @@ const Frame = ({ filename, pad, frame, blockId }) => {
   const framePadded = pad ? String(frame).padStart(pad, '0') : frame;
   const imgSrc = base + filename.replace('${i}', framePadded);
 
- // return (<div className="frame-animator" id={blockId}>
- //    <img src={imgSrc} className="frame-animator__image" />
- //  </div>);
   return (
-    <div id={blockId}>
-      <img src={imgSrc} />
+    <div className="frame" id={blockId}>
+      <img className="img" src={imgSrc} />
     </div>
   );
 };
